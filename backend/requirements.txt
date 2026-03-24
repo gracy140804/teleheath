@@ -8,16 +8,6 @@ pydantic
 pydantic-settings
 python-jose[cryptography]
 passlib[bcrypt]
-fastapi
-uvicorn[standard]
-gunicorn
-sqlalchemy[asyncio]
-psycopg2-binary
-alembic
-pydantic
-pydantic-settings
-python-jose[cryptography]
-passlib[bcrypt]
 python-multipart
 requests
 openai
