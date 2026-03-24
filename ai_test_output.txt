@@ -1,0 +1,68 @@
+﻿============================================================
+SYMPTOM ANALYSIS TEST RESULTS
+============================================================
+
+Input:    'palpitation'
+Symptoms: ['palpitation']
+Spec:     Cardiologist
+Summary:  Patient reports palpitation with moderate severity.
+
+Input:    'papilataion'
+Symptoms: ['palpitation']
+Spec:     Cardiologist
+Summary:  Patient reports palpitation with moderate severity.
+
+Input:    'I have nausea'
+Symptoms: ['nausea']
+Spec:     Gastroenterologist
+Summary:  Patient reports nausea with moderate severity.
+
+Input:    'headache for 3 days'
+Symptoms: ['headache']
+Spec:     Neurologist
+Summary:  Patient reports headache with moderate severity.
+
+Input:    'fever and cough'
+Symptoms: ['fever', 'cough']
+Spec:     General Physician
+Summary:  Patient reports fever, cough with moderate severity.
+
+Input:    'chest pain and shortness of breath'
+Symptoms: ['chest pain', 'shortness of breath']
+Spec:     Cardiologist
+Summary:  Patient reports chest pain, shortness of breath with high severity.
+
+Input:    'dizziness'
+Symptoms: ['dizziness']
+Spec:     Neurologist
+Summary:  Patient reports dizziness with moderate severity.
+
+Input:    'skin rash and itchy'
+Symptoms: ['skin rash']
+Spec:     Dermatologist
+Summary:  Patient reports skin rash with moderate severity.
+
+Input:    'anxiety and stress'
+Symptoms: ['anxiety']
+Spec:     Psychiatrist
+Summary:  Patient reports anxiety with moderate severity.
+
+Input:    'knee pain'
+Symptoms: ['joint pain']
+Spec:     Orthopedic
+Summary:  Patient reports joint pain with moderate severity.
+
+Input:    'I feel tired and weak'
+Symptoms: ['fatigue']
+Spec:     General Physician
+Summary:  Patient reports fatigue with moderate severity.
+
+Input:    'blurry vision'
+Symptoms: ['eye problem']
+Spec:     Ophthalmologist
+Summary:  Patient reports eye problem with moderate severity.
+
+Input:    'sore throat'
+Symptoms: ['sore throat']
+Spec:     ENT Specialist
+Summary:  Patient reports sore throat with moderate severity.

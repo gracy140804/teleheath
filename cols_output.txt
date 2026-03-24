@@ -1,0 +1,1 @@
+﻿Columns in patient_profiles: ['id', 'user_id', 'age', 'gender', 'medical_history', 'phone', 'address', 'blood_group', 'weight']

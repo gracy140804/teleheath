@@ -1,0 +1,274 @@
+INFO:     127.0.0.1:61658 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56657 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+DEBUG: Login failed - Password mismatch for user: drvinith@gmail.com
+INFO:     127.0.0.1:57765 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+DEBUG: Login failed - Password mismatch for user: drvinith@gmail.com
+INFO:     127.0.0.1:61442 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+DEBUG: Login failed - Password mismatch for user: drvinith@gmail.com
+INFO:     127.0.0.1:50194 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:57283 - "GET /api/video/auth/03322f15-8d7a-49fd-898f-b4e4039d25f5 HTTP/1.1" 200 OK
+DEBUG: Login failed - Password mismatch for user: drvinith@gmail.com
+INFO:     127.0.0.1:54296 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:60840 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60840 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54658 - "OPTIONS /api/video/03322f15-8d7a-49fd-898f-b4e4039d25f5/end HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52178 - "POST /api/video/03322f15-8d7a-49fd-898f-b4e4039d25f5/end HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54658 - "OPTIONS /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61428 - "OPTIONS /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56487 - "OPTIONS /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54658 - "OPTIONS /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51264 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64650 - "OPTIONS /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61428 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62954 - "OPTIONS /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56025 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52178 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65464 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57569 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52178 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57569 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62134 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56025 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63444 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60985 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63444 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60985 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58274 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58274 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51781 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54197 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65208 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57975 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59865 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60256 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59116 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63532 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62480 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57173 - "OPTIONS /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65270 - "OPTIONS /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52848 - "OPTIONS /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60481 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64637 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51849 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61253 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53165 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53516 - "OPTIONS /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61230 - "OPTIONS /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53740 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53740 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55860 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52001 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56694 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59501 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64915 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63304 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50696 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54123 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55746 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50183 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60127 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51274 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62314 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51366 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58513 - "OPTIONS /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52615 - "OPTIONS /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51366 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51366 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55291 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61701 - "OPTIONS /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63981 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63981 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62956 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56969 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60915 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56947 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+DEBUG: Login failed - User not found: doctor@example.com
+INFO:     127.0.0.1:65521 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+DEBUG: Login failed - User not found: doctor@test.com
+INFO:     127.0.0.1:58345 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53725 - "OPTIONS /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53725 - "OPTIONS /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58057 - "OPTIONS /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52927 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49707 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59532 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51469 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49673 - "OPTIONS /api/video/auth/room-22 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56537 - "GET /api/video/auth/room-22 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56537 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54685 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60382 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57634 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56537 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54685 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60382 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57634 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50076 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50554 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50076 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50554 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56884 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56884 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56974 - "OPTIONS /api/video/694087f0-5215-4fe4-b2f9-2052975c07e8/finalize HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57361 - "POST /api/video/694087f0-5215-4fe4-b2f9-2052975c07e8/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63370 - "POST /api/video/694087f0-5215-4fe4-b2f9-2052975c07e8/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60160 - "GET /api/video/auth/room-22 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60160 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54130 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53358 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57749 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60160 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53358 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54130 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57749 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60160 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53358 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54130 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57749 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57070 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57070 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57347 - "POST /api/video/694087f0-5215-4fe4-b2f9-2052975c07e8/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64402 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59808 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49951 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53947 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62039 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52370 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62039 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52370 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61194 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61194 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51514 - "OPTIONS /api/video/auth/room-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65158 - "GET /api/video/auth/room-18 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52260 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65158 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51892 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51270 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51892 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65158 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52260 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51270 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+DEBUG: Login failed - User not found: doctor@example.com
+INFO:     127.0.0.1:63134 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:60546 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57927 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62859 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50487 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63823 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56378 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63823 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56378 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57683 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57683 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+DEBUG: Login failed - User not found: doctor@test.com
+INFO:     127.0.0.1:56836 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:62811 - "GET /api/doctor/stats HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:51689 - "GET /api/doctor/appointments HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61702 - "GET /api/doctor/profile HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54402 - "GET /api/notifications/ HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:63588 - "OPTIONS /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63242 - "POST /api/auth/register HTTP/1.1" 200 OK
+DEBUG: Login failed - Password mismatch for user: subagent@doctor.com
+INFO:     127.0.0.1:57453 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:49790 - "GET /api/video/auth/694087f0-5215-4fe4-b2f9-2052975c07e8 HTTP/1.1" 401 Unauthorized
+DEBUG: Login failed - Password mismatch for user: subagent@doctor.com
+INFO:     127.0.0.1:60619 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55184 - "POST /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55545 - "GET /api/doctor/stats HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53506 - "GET /api/doctor/profile HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:49669 - "GET /api/doctor/appointments HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:63369 - "GET /api/notifications/ HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52902 - "GET /api/video/auth/room-22 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:65004 - "POST /auth/login HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57073 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:57079 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:62980 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:60753 - "OPTIONS /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52040 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49669 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61364 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59767 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50649 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62258 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54923 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56107 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54923 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55893 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63925 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63925 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55264 - "OPTIONS /api/video/10f6abff-2e8d-46ac-ba55-56d093f7032e/finalize HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63925 - "POST /api/video/10f6abff-2e8d-46ac-ba55-56d093f7032e/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62826 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:62261 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:49201 - "POST /api/video/10f6abff-2e8d-46ac-ba55-56d093f7032e/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60991 - "OPTIONS /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49201 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49201 - "POST /api/video/10f6abff-2e8d-46ac-ba55-56d093f7032e/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51683 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:62939 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:59573 - "OPTIONS /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62201 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52209 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65097 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52209 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54476 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53618 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61566 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53618 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61566 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55040 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55040 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64220 - "OPTIONS /api/video/10f6abff-2e8d-46ac-ba55-56d093f7032e/finalize HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55040 - "POST /api/video/10f6abff-2e8d-46ac-ba55-56d093f7032e/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59712 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:63589 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:60401 - "OPTIONS /api/video/10f6fdc2-61fe-4cfd-898f-b4e4039d25f5/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62698 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:54639 - "OPTIONS /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62021 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54639 - "OPTIONS /api/video/10f6abff-2e8d-46ac-ba55-56d093f7032e/finalize HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62021 - "POST /api/video/10f6abff-2e8d-46ac-ba55-56d093f7032e/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51455 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61779 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62045 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57276 - "OPTIONS /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50857 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65149 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50857 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65149 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54460 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60280 - "OPTIONS /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51011 - "OPTIONS /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54789 - "OPTIONS /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60280 - "OPTIONS /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50181 - "OPTIONS /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54460 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60589 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61752 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58583 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57833 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60589 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54460 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61752 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50135 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55128 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50135 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55128 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61831 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64567 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55128 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50135 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56251 - "GET /api/notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64567 - "GET /api/doctor/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61831 - "GET /api/doctor/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50135 - "GET /api/doctor/appointments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53376 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53376 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53376 - "POST /api/video/10f6abff-2e8d-46ac-ba55-56d093f7032e/finalize HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62648 - "POST /api/auth/login HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:63089 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59562 - "OPTIONS /api/video/finalize-system HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63089 - "POST /api/video/finalize-system HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49311 - "OPTIONS /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61167 - "GET /api/video/auth/10f6abff-2e8d-46ac-ba55-56d093f7032e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61167 - "POST /api/video/finalize-system HTTP/1.1" 404 Not Found

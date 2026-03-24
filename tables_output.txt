@@ -1,0 +1,1 @@
+﻿Tables in e:\final\backend\telehealth.db: ['users', 'patient_profiles', 'doctor_profiles', 'appointments', 'symptom_records', 'prescriptions', 'doctor_availabilities', 'lab_tests', 'lab_appointments']
