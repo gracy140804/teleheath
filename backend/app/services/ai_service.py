@@ -1,10 +1,7 @@
 import os
 import json
-import torch
-import torch.nn as nn
 import re
 import sys
-from transformers import AutoTokenizer, AutoModel
 from typing import List, Dict, Any
 from sqlalchemy.orm import Session
 from app.models.models import DoctorProfile, User

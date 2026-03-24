@@ -11,8 +11,6 @@ passlib[bcrypt]
 python-multipart
 requests
 openai
-transformers
-torch
 pandas
 scikit-learn
 pypdf
