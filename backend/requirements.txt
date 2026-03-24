@@ -18,4 +18,3 @@ scikit-learn
 pypdf
 python-dotenv
 aiofiles
-cors
