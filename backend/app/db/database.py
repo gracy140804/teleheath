@@ -6,15 +6,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/telehealth")
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-# Ensure the database exists or handle mock for now
-# I'll use sqlite for initial development if postgres is not available
-if not DATABASE_URL.startswith("postgresql"):
+# Handle cloud providers using postgres:// vs postgresql://
+if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
+# Default to local sqlite only if no DATABASE_URL is provided
+if not DATABASE_URL:
     DATABASE_URL = "sqlite:///./telehealth.db"
 
 engine = create_engine(
     DATABASE_URL,
+    # SQLite requires check_same_thread=False
     connect_args={"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
 )
 
