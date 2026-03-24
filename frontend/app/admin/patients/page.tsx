@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Users,
@@ -21,7 +21,7 @@ import {
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import api from '@/lib/api';
 
-export default function AdminPatients() {
+function AdminPatientsContent() {
     const searchParams = useSearchParams();
     const filterParam = searchParams.get('filter');
     const [patients, setPatients] = useState<any[]>([]);
@@ -440,5 +440,13 @@ export default function AdminPatients() {
                 )}
             </AnimatePresence>
         </div>
+    );
+}
+
+export default function AdminPatients() {
+    return (
+        <Suspense fallback={<div className="p-20 text-center font-black uppercase tracking-widest opacity-20">Loading Clinical Data...</div>}>
+            <AdminPatientsContent />
+        </Suspense>
     );
 }

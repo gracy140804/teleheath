@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Stethoscope,
@@ -28,7 +28,8 @@ import {
     Syringe,
     Accessibility,
     BadgeAlert,
-    AlertCircle
+    AlertCircle,
+    Loader2
 } from 'lucide-react';
 import api from '@/lib/api';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -52,7 +53,7 @@ const IconMap: { [key: string]: any } = {
 type ViewState = 'TABS' | 'SPECIALISTS' | 'BOOKING' | 'SUCCESS';
 type BookingMode = 'AI' | 'MANUAL';
 
-export default function AppointmentBookingHub() {
+function AppointmentBookingHubContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -523,6 +524,21 @@ export default function AppointmentBookingHub() {
                 </AnimatePresence>
             </div>
         </MainLayout>
+    );
+}
+
+export default function AppointmentBookingHub() {
+    return (
+        <Suspense fallback={
+            <div className="flex items-center justify-center min-h-screen bg-white">
+                <div className="flex flex-col items-center gap-4">
+                    <Loader2 className="w-12 h-12 animate-spin text-primary opacity-20" />
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted">AuraHealth Network Initializing...</p>
+                </div>
+            </div>
+        }>
+            <AppointmentBookingHubContent />
+        </Suspense>
     );
 }
 

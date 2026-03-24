@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, Suspense } from 'react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import {
     PhoneOff,
@@ -27,12 +27,13 @@ import {
     Send,
     Plus,
     CheckCircle2,
-    Settings
+    Settings,
+    Loader2
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '@/lib/api';
 
-export default function DoctorVideoCallPage() {
+function DoctorVideoCallContent() {
     const params = useParams();
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -812,5 +813,18 @@ export default function DoctorVideoCallPage() {
                 )}
             </AnimatePresence>
         </div>
+    );
+}
+
+export default function DoctorVideoCallPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-white p-6 font-outfit">
+                <Loader2 className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin mb-6" />
+                <p className="text-slate-500 font-bold tracking-widest uppercase text-xs">Initializing Secure Channel...</p>
+            </div>
+        }>
+            <DoctorVideoCallContent />
+        </Suspense>
     );
 }

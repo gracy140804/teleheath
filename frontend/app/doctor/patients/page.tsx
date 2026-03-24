@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Users,
@@ -20,14 +20,15 @@ import {
     UserCircle,
     LayoutDashboard,
     Bell,
-    LogOut
+    LogOut,
+    Loader2
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import api from '@/lib/api';
 import NotificationBell from '@/components/NotificationBell';
 
-export default function DoctorPatients() {
+function DoctorPatientsContent() {
     const searchParams = useSearchParams();
     const filterParam = searchParams.get('filter');
     const [patients, setPatients] = useState<any[]>([]);
@@ -522,5 +523,20 @@ export default function DoctorPatients() {
                 )}
             </AnimatePresence>
         </div>
+    );
+}
+
+export default function DoctorPatients() {
+    return (
+        <Suspense fallback={
+            <div className="flex items-center justify-center min-h-screen bg-[#FDFBF7]">
+                <div className="flex flex-col items-center gap-4">
+                    <Loader2 className="w-10 h-10 animate-spin text-[#2563EB] opacity-20" />
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#636E72]">Syncing Patient Records...</p>
+                </div>
+            </div>
+        }>
+            <DoctorPatientsContent />
+        </Suspense>
     );
 }

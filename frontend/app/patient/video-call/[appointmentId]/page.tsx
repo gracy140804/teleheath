@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, Suspense } from 'react';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import {
     PhoneOff,
@@ -24,12 +24,13 @@ import {
     Save,
     AlertCircle,
     WifiOff,
-    RefreshCw
+    RefreshCw,
+    Loader2
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '@/lib/api';
 
-export default function PatientVideoCallPage() {
+function PatientVideoCallContent() {
     const params = useParams();
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -721,5 +722,18 @@ export default function PatientVideoCallPage() {
                 )}
             </AnimatePresence>
         </div>
+    );
+}
+
+export default function PatientVideoCallPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center text-white p-6 font-outfit">
+                <Loader2 className="w-12 h-12 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin mb-6" />
+                <p className="text-slate-500 font-bold tracking-widest uppercase text-xs">Joining Secure Stream...</p>
+            </div>
+        }>
+            <PatientVideoCallContent />
+        </Suspense>
     );
 }

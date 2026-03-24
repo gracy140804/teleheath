@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -13,7 +13,8 @@ import {
     CheckCircle2,
     Save,
     User,
-    ArrowLeft
+    ArrowLeft,
+    Loader2
 } from 'lucide-react';
 import MainLayout from '@/components/MainLayout';
 import api from '@/lib/api';
@@ -26,7 +27,7 @@ interface Medication {
     duration: string;
 }
 
-export default function GeneratePrescriptionPage() {
+function GeneratePrescriptionContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     
@@ -286,5 +287,20 @@ export default function GeneratePrescriptionPage() {
                 </div>
             </div>
         </MainLayout>
+    );
+}
+
+export default function GeneratePrescriptionPage() {
+    return (
+        <Suspense fallback={
+            <MainLayout title="Issue Digital Prescription">
+                <div className="max-w-4xl mx-auto min-h-[70vh] flex flex-col items-center justify-center p-6 text-center">
+                    <Loader2 className="w-12 h-12 text-primary animate-spin mb-6" />
+                    <p className="text-slate-500 font-bold tracking-widest uppercase text-xs">Loading Prescription Builder...</p>
+                </div>
+            </MainLayout>
+        }>
+            <GeneratePrescriptionContent />
+        </Suspense>
     );
 }
