@@ -29,7 +29,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '@/lib/api';
-import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
+// ZegoUIKitPrebuilt is imported dynamically inside the component to avoid SSR errors
 
 function PatientVideoCallContent() {
     const params = useParams();
@@ -173,9 +173,15 @@ function PatientVideoCallContent() {
     }, [isAuthorized, roomId]);
 
     const myMeeting = async (element: HTMLDivElement) => {
-        if (!appID || !serverSecret || !roomId || zpRef.current) return;
+        if (!appID || !serverSecret || !roomId || zpRef.current) {
+            console.log("Zego initialization skipped:", { hasAppID: !!appID, hasSecret: !!serverSecret, hasRoom: !!roomId, hasZp: !!zpRef.current });
+            return;
+        }
         
         try {
+            // Dynamic import Zego SDK to prevent SSR 'document is not defined' errors
+            const { ZegoUIKitPrebuilt } = await import('@zegocloud/zego-uikit-prebuilt');
+            
             // Generate Kit Token
             const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
                 appID, 
