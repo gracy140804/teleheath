@@ -43,6 +43,7 @@ function DoctorVideoCallContent() {
 
     const localVideoRef = useRef<HTMLVideoElement>(null);
     const zegoContainerRef = useRef<HTMLDivElement>(null);
+    const zpRef = useRef<any>(null);
     const streamRef = useRef<MediaStream | null>(null);
     const [stream, setStream] = useState<MediaStream | null>(null);
 
@@ -171,14 +172,24 @@ function DoctorVideoCallContent() {
                 const aTrack = tracks.find(t => t.kind === 'audio');
                 if (vTrack && !selectedVideo) setSelectedVideo(vTrack.getSettings().deviceId || '');
                 if (aTrack && !selectedAudio) setSelectedAudio(aTrack.getSettings().deviceId || '');
-            }
-        } catch (err) {
-            console.error("Error accessing media devices:", err);
         }
     };
 
+    useEffect(() => {
+        if (isAuthorized && zegoContainerRef.current && !zpRef.current) {
+            myMeeting(zegoContainerRef.current);
+        }
+        
+        return () => {
+            if (zpRef.current) {
+                zpRef.current.destroy();
+                zpRef.current = null;
+            }
+        };
+    }, [isAuthorized, roomId]);
+
     const myMeeting = async (element: HTMLDivElement) => {
-        if (!appID || !serverSecret || !roomId) return;
+        if (!appID || !serverSecret || !roomId || zpRef.current) return;
         
         try {
             // Generate Kit Token
@@ -187,11 +198,12 @@ function DoctorVideoCallContent() {
                 serverSecret, 
                 roomId, 
                 Date.now().toString(), 
-                "Doctor" // Or actual name if available
+                "Doctor"
             );
 
             // Create instance object from Kit Token.
             const zp = ZegoUIKitPrebuilt.create(kitToken);
+            zpRef.current = zp;
             
             // start the call
             zp.joinRoom({
@@ -216,6 +228,7 @@ function DoctorVideoCallContent() {
             });
         } catch (error) {
             console.error("Error joining Zego room:", error);
+            zpRef.current = null;
         }
     };
 
@@ -436,33 +449,26 @@ function DoctorVideoCallContent() {
             <div className="flex-1 flex overflow-hidden">
                 {/* 1. Video Canvas Area (Flex 1) */}
                 <div className="flex-1 relative p-6 bg-slate-950 flex flex-col items-center justify-center">
-                    <div ref={zegoContainerRef} className="w-full h-full max-h-[85vh] bg-slate-900 rounded-[3rem] overflow-hidden relative border border-white/5 shadow-2xl group">
-                        {!zegoContainerRef.current && (
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <AnimatePresence>
-                                    <motion.div 
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        className="text-center"
-                                    >
-                                        <div className="w-40 h-40 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-white/5 shadow-inner">
-                                            <User className="w-20 h-20 text-slate-600" />
-                                        </div>
-                                        <h3 className="text-xl font-black text-white mb-2">{patientName}</h3>
-                                        <p className="text-slate-500 font-bold tracking-widest uppercase text-[10px] animate-pulse">Initializing Video Stream...</p>
-                                    </motion.div>
-                                </AnimatePresence>
-                            </div>
-                        )}
+                    <div className="w-full h-full max-h-[85vh] bg-slate-900 rounded-[3rem] overflow-hidden relative border border-white/5 shadow-2xl group">
+                        <div className="absolute inset-0 flex items-center justify-center -z-10">
+                            <AnimatePresence>
+                                <motion.div 
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="text-center"
+                                >
+                                    <div className="w-40 h-40 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-white/5 shadow-inner">
+                                        <User className="w-20 h-20 text-slate-600" />
+                                    </div>
+                                    <h3 className="text-xl font-black text-white mb-2">{patientName}</h3>
+                                    <p className="text-slate-500 font-bold tracking-widest uppercase text-[10px] animate-pulse">Initializing Video Stream...</p>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
                         {/* Zego container will be injected here via the ref and useEffect */}
                         <div 
                             className="w-full h-full" 
-                            ref={(el) => {
-                                if (el && !zegoContainerRef.current) {
-                                    (zegoContainerRef as any).current = el;
-                                    myMeeting(el);
-                                }
-                            }} 
+                            ref={zegoContainerRef}
                         />
                     </div>
 
