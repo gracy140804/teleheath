@@ -613,10 +613,10 @@ function DoctorVideoCallContent() {
                                                     </div>
                                                     <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
                                                         <div className="flex justify-between items-start mb-2">
-                                                            <p className="text-xs font-black text-white">{visit.doctor_name}</p>
-                                                            <span className="text-[9px] text-slate-500 font-mono italic">{visit.date}</span>
+                                                            <p className="text-xs font-black text-white">{visit?.doctor_name || 'Medical Professional'}</p>
+                                                            <span className="text-[9px] text-slate-500 font-mono italic">{visit?.date || 'Past Date'}</span>
                                                         </div>
-                                                        <p className="text-[10px] text-primary/80 font-bold uppercase tracking-widest">{visit.specialization}</p>
+                                                        <p className="text-[10px] text-primary/80 font-bold uppercase tracking-widest">{visit?.specialization || 'Clinical Summary'}</p>
                                                     </div>
                                                 </div>
                                             )) || <p className="text-slate-600 text-xs italic ml-6">No past visits recorded.</p>}
@@ -632,8 +632,8 @@ function DoctorVideoCallContent() {
                                                             <FileText className="w-4 h-4 text-emerald-400" />
                                                         </div>
                                                         <div className="flex-1">
-                                                            <p className="text-xs font-bold leading-tight line-clamp-1 italic text-slate-300">"{p.notes}"</p>
-                                                            <p className="text-[9px] text-slate-500 mt-1 font-mono uppercase">{p.date}</p>
+                                                            <p className="text-xs font-bold leading-tight line-clamp-1 italic text-slate-300">"{p?.notes || 'No prescription notes'}"</p>
+                                                            <p className="text-[9px] text-slate-500 mt-1 font-mono uppercase">{p?.date || 'Previous Date'}</p>
                                                         </div>
                                                     </div>
                                                 )) || <p className="text-slate-600 text-xs italic ml-1">No prescriptions found.</p>}

@@ -608,10 +608,10 @@ function PatientVideoCallContent() {
                                                     {clinicalData.past_visits.map((visit: any, idx: number) => (
                                                         <div key={idx} className="flex justify-between items-start">
                                                             <div>
-                                                                <p className="text-white text-xs font-bold">{visit.doctor_name}</p>
-                                                                <p className="text-[10px] text-slate-500">{visit.specialization}</p>
+                                                                <p className="text-white text-xs font-bold">{visit?.doctor_name || 'Medical Professional'}</p>
+                                                                <p className="text-[10px] text-slate-500">{visit?.specialization || 'Clinical Summary'}</p>
                                                             </div>
-                                                            <p className="text-[10px] text-slate-600 font-mono">{visit.date}</p>
+                                                            <p className="text-[10px] text-slate-600 font-mono">{visit?.date || 'Past Date'}</p>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -624,8 +624,8 @@ function PatientVideoCallContent() {
                                                 <div className="space-y-3">
                                                     {clinicalData.lab_reports.map((report: any, idx: number) => (
                                                         <div key={idx} className="bg-slate-900/50 p-3 rounded-xl border border-slate-700/30">
-                                                            <p className="text-white text-xs font-bold">{report.test_name}</p>
-                                                            <p className="text-[10px] text-slate-500 mt-1">{report.provider} • {report.date}</p>
+                                                            <p className="text-white text-xs font-bold">{report?.test_name || 'Medical Lab Test'}</p>
+                                                            <p className="text-[10px] text-slate-500 mt-1">{report?.provider || 'Health Lab'} • {report?.date || 'Recent'}</p>
                                                         </div>
                                                     ))}
                                                 </div>
