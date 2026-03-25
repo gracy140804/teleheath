@@ -32,6 +32,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import api from '@/lib/api';
+import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
 
 function DoctorVideoCallContent() {
     const params = useParams();
@@ -41,8 +42,12 @@ function DoctorVideoCallContent() {
     const roomId = searchParams.get('roomId');
 
     const localVideoRef = useRef<HTMLVideoElement>(null);
+    const zegoContainerRef = useRef<HTMLDivElement>(null);
     const streamRef = useRef<MediaStream | null>(null);
     const [stream, setStream] = useState<MediaStream | null>(null);
+
+    const appID = Number(process.env.NEXT_PUBLIC_ZEGO_APP_ID);
+    const serverSecret = process.env.NEXT_PUBLIC_ZEGO_SERVER_SECRET as string;
 
     const [isMuted, setIsMuted] = useState(false);
     const [isVideoOff, setIsVideoOff] = useState(false);
@@ -169,6 +174,48 @@ function DoctorVideoCallContent() {
             }
         } catch (err) {
             console.error("Error accessing media devices:", err);
+        }
+    };
+
+    const myMeeting = async (element: HTMLDivElement) => {
+        if (!appID || !serverSecret || !roomId) return;
+        
+        try {
+            // Generate Kit Token
+            const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
+                appID, 
+                serverSecret, 
+                roomId, 
+                Date.now().toString(), 
+                "Doctor" // Or actual name if available
+            );
+
+            // Create instance object from Kit Token.
+            const zp = ZegoUIKitPrebuilt.create(kitToken);
+            
+            // start the call
+            zp.joinRoom({
+                container: element,
+                sharedLinks: [
+                    {
+                        name: 'Personal link',
+                        url:
+                            window.location.protocol + '//' + 
+                            window.location.host + window.location.pathname +
+                            '?roomId=' + roomId,
+                    },
+                ],
+                scenario: {
+                    mode: ZegoUIKitPrebuilt.OneONoneCall,
+                },
+                showScreenSharingButton: true,
+                showRoomDetailsButton: false,
+                onLeaveRoom: () => {
+                    handleEndCall();
+                }
+            });
+        } catch (error) {
+            console.error("Error joining Zego room:", error);
         }
     };
 
@@ -359,6 +406,13 @@ function DoctorVideoCallContent() {
                         {formatTime(callDuration)}
                     </div>
                     <button 
+                        onClick={() => setShowSidebar(!showSidebar)} 
+                        className={`p-3 rounded-xl transition-all border ${showSidebar ? 'bg-primary text-white border-primary shadow-lg shadow-primary/20' : 'bg-white/5 text-slate-400 border-white/10 hover:text-white hover:bg-white/10'}`}
+                        title="Intelligence Sidebar"
+                    >
+                        <Stethoscope className="w-5 h-5" />
+                    </button>
+                    <button 
                         onClick={handleSettingsClick} 
                         className="p-3 bg-white/5 text-slate-400 rounded-xl hover:text-white transition-all border border-white/10 hover:bg-white/10"
                         title="Call Settings"
@@ -382,101 +436,36 @@ function DoctorVideoCallContent() {
             <div className="flex-1 flex overflow-hidden">
                 {/* 1. Video Canvas Area (Flex 1) */}
                 <div className="flex-1 relative p-6 bg-slate-950 flex flex-col items-center justify-center">
-                    <div className="w-full h-full max-h-[85vh] bg-slate-900 rounded-[3rem] overflow-hidden relative border border-white/5 shadow-2xl group">
-                        {/* Remote Video Placeholder */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <AnimatePresence>
-                                <motion.div 
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    className="text-center"
-                                >
-                                    <div className="w-40 h-40 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-white/5 shadow-inner">
-                                        <User className="w-20 h-20 text-slate-600" />
-                                    </div>
-                                    <h3 className="text-xl font-black text-white mb-2">{patientName}</h3>
-                                    <p className="text-slate-500 font-bold tracking-widest uppercase text-[10px] animate-pulse">Waiting for patient to join...</p>
-                                </motion.div>
-                            </AnimatePresence>
-                        </div>
-
-                        {/* Local Self-View Pip (Draggable-style) */}
-                        <motion.div 
-                            className="absolute bottom-8 right-8 w-64 h-40 bg-black rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-10"
-                            whileHover={{ scale: 1.02 }}
-                        >
-                            <video
-                                ref={localVideoRef}
-                                autoPlay
-                                muted
-                                playsInline
-                                className={`w-full h-full object-cover mirror ${isVideoOff ? 'opacity-0' : 'opacity-100'}`}
-                            />
-                            {isVideoOff && (
-                                <div className="absolute inset-0 bg-slate-800 flex items-center justify-center">
-                                    <User className="w-10 h-10 text-slate-600 opacity-20" />
-                                </div>
-                            )}
-                            <div className="absolute top-3 left-3 px-2 py-1 bg-black/40 backdrop-blur-md rounded-lg border border-white/10">
-                                <p className="text-[10px] font-bold uppercase tracking-widest">You (Dr.)</p>
+                    <div ref={zegoContainerRef} className="w-full h-full max-h-[85vh] bg-slate-900 rounded-[3rem] overflow-hidden relative border border-white/5 shadow-2xl group">
+                        {!zegoContainerRef.current && (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <AnimatePresence>
+                                    <motion.div 
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        className="text-center"
+                                    >
+                                        <div className="w-40 h-40 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-white/5 shadow-inner">
+                                            <User className="w-20 h-20 text-slate-600" />
+                                        </div>
+                                        <h3 className="text-xl font-black text-white mb-2">{patientName}</h3>
+                                        <p className="text-slate-500 font-bold tracking-widest uppercase text-[10px] animate-pulse">Initializing Video Stream...</p>
+                                    </motion.div>
+                                </AnimatePresence>
                             </div>
-                        </motion.div>
-
-                        {/* Top Overlays */}
-                        <div className="absolute top-8 left-8 flex gap-3">
-                            <div className="px-4 py-2 bg-slate-900/80 backdrop-blur-3xl rounded-2xl border border-white/10 flex items-center gap-3">
-                                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                                <span className="text-xs font-bold tracking-tight">HD Quality</span>
-                            </div>
-                            <div className="px-4 py-2 bg-slate-900/80 backdrop-blur-3xl rounded-2xl border border-white/10 flex items-center gap-3">
-                                <WifiOff className="w-4 h-4 text-emerald-500" />
-                                <span className="text-xs font-bold">12ms Latency</span>
-                            </div>
-                        </div>
+                        )}
+                        {/* Zego container will be injected here via the ref and useEffect */}
+                        <div 
+                            className="w-full h-full" 
+                            ref={(el) => {
+                                if (el && !zegoContainerRef.current) {
+                                    (zegoContainerRef as any).current = el;
+                                    myMeeting(el);
+                                }
+                            }} 
+                        />
                     </div>
 
-                    {/* Integrated Floating Controls */}
-                    <motion.div 
-                        initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        className="absolute bottom-12 flex items-center gap-4 bg-slate-900/60 backdrop-blur-3xl p-4 rounded-[2.5rem] border border-white/10 shadow-3xl z-40"
-                    >
-                        <button
-                            onClick={toggleMute}
-                            className={`p-5 rounded-2xl transition-all ${isMuted ? 'bg-red-500 text-white shadow-lg shadow-red-500/20' : 'bg-white/5 text-white hover:bg-white/10'}`}
-                        >
-                            {isMuted ? <MicOff className="w-6 h-6" /> : <Mic className="w-6 h-6" />}
-                        </button>
-
-                        <button
-                            onClick={toggleVideo}
-                            className={`p-5 rounded-2xl transition-all ${isVideoOff ? 'bg-red-500 text-white shadow-lg shadow-red-500/20' : 'bg-white/5 text-white hover:bg-white/10'}`}
-                        >
-                            {isVideoOff ? <VideoOff className="w-6 h-6" /> : <VideoIcon className="w-6 h-6" />}
-                        </button>
-
-                        <button onClick={toggleFullScreen} className="p-5 bg-white/5 text-white hover:bg-white/10 rounded-2xl transition-all">
-                            <Maximize className="w-6 h-6" />
-                        </button>
-
-                        <div className="w-[1px] h-10 bg-white/10 mx-2" />
-
-                        <button
-                            onClick={() => setShowSidebar(!showSidebar)}
-                            className={`p-5 rounded-2xl transition-all ${showSidebar ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'bg-white/5 text-white hover:bg-white/10'}`}
-                            title="Intelligence Sidebar"
-                        >
-                            <Stethoscope className="w-6 h-6" />
-                        </button>
-
-                        <button
-                            onClick={handleEndCall}
-                            className="p-5 bg-red-600 text-white rounded-2xl hover:bg-red-700 transition-all flex items-center gap-4 px-10 shadow-xl shadow-red-600/30"
-                        >
-                            <PhoneOff className="w-6 h-6" />
-                            <span className="font-black text-xs uppercase tracking-widest">End Session</span>
-                        </button>
-                    </motion.div>
                 </div>
 
                 {/* 2. Advanced Diagnostic Sidebar (W-96 or W-1/3) */}
