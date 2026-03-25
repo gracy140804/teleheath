@@ -1,0 +1,73 @@
+﻿
+> frontend@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+node.exe : 
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (:String) [],    
+ RemoteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+> Build error occurred
+Error: Turbopack build 
+failed with 1 errors:
+./app/doctor/video-call
+/[appointmentId]/page.t
+sx:176:6
+Parsing ecmascript 
+source code failed
+[0m [90m 174 |[39m  
+               
+[36mif[39m (aTrack 
+[33m&&[39m [33m![39
+mselectedAudio) setSele
+ctedAudio(aTrack[33m.
+[39mgetSettings()[33m.
+[39mdeviceId 
+[33m||[39m [32m''[3
+9m)[33m;[39m
+ [90m 175 |[39m      
+   }
+[31m[1m>[22m[39m[9
+0m 176 |[39m     
+}[33m;[39m
+ [90m     |[39m      
+[31m[1m^[22m[39m
+ [90m 177 |[39m
+ [90m 178 |[39m     
+useEffect(() 
+[33m=>[39m {
+ [90m 179 |[39m      
+   [36mif[39m 
+(isAuthorized 
+[33m&&[39m zegoContai
+nerRef[33m.[39mcurren
+t [33m&&[39m [33m![
+39mzpRef[33m.[39mcurr
+ent) {[0m
+
+Expected a semicolon
+
+
+    at <unknown> (./app
+/doctor/video-call/[app
+ointmentId]/page.tsx:17
+6:6)
+

@@ -172,6 +172,9 @@ function DoctorVideoCallContent() {
                 const aTrack = tracks.find(t => t.kind === 'audio');
                 if (vTrack && !selectedVideo) setSelectedVideo(vTrack.getSettings().deviceId || '');
                 if (aTrack && !selectedAudio) setSelectedAudio(aTrack.getSettings().deviceId || '');
+            }
+        } catch (err) {
+            console.error("Error accessing media devices:", err);
         }
     };
 
